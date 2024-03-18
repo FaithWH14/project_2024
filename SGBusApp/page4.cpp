@@ -52,9 +52,14 @@ void Page4::handleItemClicked(const QModelIndex &index){
 
     indexBusRoute = index.data(Qt::UserRole).toString();
     // indexFirstOrSecond = index.data(Qt::UserRole).toString();
-    indexBusStationName = index.data(Qt::UserRole+1).toString();
-    indexBusStopCode = index.data(Qt::UserRole+2).toString();
-    indexDistance = index.data(Qt::UserRole+3).toString();
+    indexBusStopCode = index.data(Qt::UserRole+1).toString();
+    indexBusStationName = index.data(Qt::UserRole+2).toString();
+    // indexDistance = index.data(Qt::UserRole+3).toString();
 
-    qDebug() << "handleItemClicked" << indexBusRoute << indexBusStationName << indexBusStopCode;
+    QList<std::tuple<QString, QString>> busStop;
+    for (const auto& tuple: model->busInfo_list) {
+        busStop.append(std::make_tuple(tuple.busStopName, tuple.busStopCode));
+    }
+    // qDebug() << "handleItemClicked" << indexBusRoute << indexBusStationName << indexBusStopCode;
+    emit onListViewItemClicked(indexBusStationName, indexBusStopCode, busStop);
 }

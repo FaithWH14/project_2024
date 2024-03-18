@@ -27,6 +27,7 @@ StackedPage::StackedPage(QWidget *parent)
     connect(page2, &Page2::testing123, page4, &Page4::onBtnClicked);
 
     connect(page4->model, &CustomItemModel::queried, page4, &Page4::querychanged);
+    connect(page4, &Page4::onListViewItemClicked, page_5, &page5::getListViewClicked);
 }
 
 StackedPage::~StackedPage()

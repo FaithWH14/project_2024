@@ -31,6 +31,9 @@ public:
     QString indexBusStopCode;
     QString indexDistance;
 
+signals:
+    void onListViewItemClicked(QString busStationName, QString firstOrSecond, QList<std::tuple<QString, QString>> busStop);
+
 public slots:
     void onBtnClicked(const QString &busRoute1, const QString &firstOrSecond1);
     void querychanged();

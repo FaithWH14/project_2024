@@ -22,6 +22,14 @@ public:
     QString firstOrSecond = "1";
     // QString busRoute;
     // QString firstOrSecond;
+    struct Item{
+        QString busSequence;
+        QString busServiceNo;
+        QString busStopName;
+        QString busStopCode;
+        QString busDistance;
+    };
+    QList<Item> busInfo_list;
 
 public slots:
     void test123(QString busRoute1, QString firstOrSecond1) {
@@ -40,15 +48,6 @@ signals:
     void queried();
 
 private:
-    struct Item{
-        QString busSequence;
-        QString busServiceNo;
-        QString busStopName;
-        QString busStopCode;
-        QString busDistance;
-    };
-
-    QList<Item> busInfo_list;
 
     BusInfoQuery busQuery;
 };

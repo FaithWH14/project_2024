@@ -8,6 +8,9 @@ page5::page5(QWidget *parent)
     ui->setupUi(this);
 
     processDisplayImage();
+
+    connect(ui->leftArrow, &QPushButton::clicked, this, &page5::onPrevBtnClick);
+    connect(ui->rightArrow, &QPushButton::clicked, this, &page5::onNextBtnClick);
 }
 
 page5::~page5()
@@ -16,8 +19,6 @@ page5::~page5()
 }
 
 void page5::processDisplayImage(){
-    QString busStopCode = "67009";
-    QString busStationName = "sengkang int";
     QString num;
 
     QString fullName = QString("%1 - %2_%3.png").arg(busStopCode).arg(busStationName).replace(" ", "_");
@@ -42,4 +43,21 @@ void page5::processDisplayImage(){
     ui->img1->setPixmap(img1.scaled(target_width, target_height, Qt::KeepAspectRatio));
     ui->img2->setPixmap(img2.scaled(target_width, target_height, Qt::KeepAspectRatio));
     ui->img3->setPixmap(img3.scaled(target_width, target_height, Qt::KeepAspectRatio));
+}
+
+void page5::searchIndex() {
+    for (int i=0; i<busStop.size(); ++i) {
+        const auto& tuple = busStop[i];
+
+        qDebug() << "attention searchindex: " << std::get<0>(tuple) <<  std::get<1>(tuple);
+        if (std::get<0>(tuple) == busStopCode && std::get<1>(tuple) == busStationName) {
+            currentImgIndex = i;
+            break;
+        }
+    }
+    if (currentImgIndex == -1) {
+        qDebug() << "not found";
+    } else {
+        qDebug() << "found" << currentImgIndex;
+    }
 }
