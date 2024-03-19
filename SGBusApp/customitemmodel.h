@@ -18,8 +18,8 @@ public:
 
     void queryService();
 
-    QString busRoute = "80";
-    QString firstOrSecond = "1";
+    QString busRoute;
+    QString firstOrSecond;
     // QString busRoute;
     // QString firstOrSecond;
     struct Item{

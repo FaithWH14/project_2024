@@ -18,16 +18,13 @@ public:
     explicit page5(QWidget *parent = nullptr);
     ~page5();
 
+signals:
+    void backBtnClicked();
 public slots:
-    void getListViewClicked(QString busStationName1, QString busStopCode1, QList<std::tuple<QString, QString>> busStop1){
-        busStationName = busStationName1;
-        busStopCode = busStopCode1;
-        processDisplayImage();
-
-        busStop = busStop1;
-        searchIndex();
-        qDebug() << "currentindex getlistview: " << currentImgIndex;
-    };
+    void getListViewClicked(QString busRoute1, QString busStationName1, QString busStopCode1, QList<std::tuple<QString, QString>> busStop1);
+    void onBackBtnClicked() {
+        emit backBtnClicked();
+    }
 
 private slots:
     void onPrevBtnClick() {
@@ -70,6 +67,7 @@ private:
     Ui::page5 *ui;
 
     void processDisplayImage();
+    QString busRoute;
     QString busStopCode;
     QString busStationName;
 

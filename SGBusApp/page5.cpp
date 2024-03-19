@@ -11,6 +11,7 @@ page5::page5(QWidget *parent)
 
     connect(ui->leftArrow, &QPushButton::clicked, this, &page5::onPrevBtnClick);
     connect(ui->rightArrow, &QPushButton::clicked, this, &page5::onNextBtnClick);
+    connect(ui->backBtn, &QPushButton::clicked, this, &page5::onBackBtnClicked);
 }
 
 page5::~page5()
@@ -19,6 +20,9 @@ page5::~page5()
 }
 
 void page5::processDisplayImage(){
+    ui->busStopT->setText(busStationName);
+    ui->busStopCodeT->setText(busStopCode);
+
     QString num;
 
     QString fullName = QString("%1 - %2_%3.png").arg(busStopCode).arg(busStationName).replace(" ", "_");
@@ -61,3 +65,18 @@ void page5::searchIndex() {
         qDebug() << "found" << currentImgIndex;
     }
 }
+
+void page5::getListViewClicked(QString busRoute1, QString busStationName1, QString busStopCode1, QList<std::tuple<QString, QString>> busStop1){
+    busRoute = busRoute1;
+    busStationName = busStationName1;
+    busStopCode = busStopCode1;
+
+    ui->busRouteT->setText(busRoute);
+
+    qDebug() << "attention what is busStation and busStop: " << busStationName << busStopCode;
+    processDisplayImage();
+
+    busStop = busStop1;
+    searchIndex();
+    qDebug() << "currentindex getlistview: " << currentImgIndex;
+};

@@ -8,6 +8,9 @@ StackedPage::StackedPage(QWidget *parent)
 {
     ui->setupUi(this);
 
+    setWindowTitle("Status Bar and Menu Bar Example");
+    ui->statusbar->showMessage("Ready");
+
     ui->stacked->addWidget(page2);
     ui->stacked->addWidget(mainWindow);
     ui->stacked->addWidget(page4);
@@ -28,6 +31,14 @@ StackedPage::StackedPage(QWidget *parent)
 
     connect(page4->model, &CustomItemModel::queried, page4, &Page4::querychanged);
     connect(page4, &Page4::onListViewItemClicked, page_5, &page5::getListViewClicked);
+    connect(page4, &Page4::onListViewItemClicked, [=]() {
+        ui->stacked->setCurrentWidget(page_5);
+    });
+
+    connect(page2, &Page2::ImageClicked, page_5, &page5::getListViewClicked);
+    connect(page_5, &page5::backBtnClicked, this, [=]() {
+        ui->stacked->setCurrentWidget(page4);
+    });
 }
 
 StackedPage::~StackedPage()

@@ -5,8 +5,11 @@
 #include <QTextEdit>
 
 #include <QMainWindow>
+#include <QComboBox>
+#include <QRadioButton>
 
 #include "businfo.h"
+#include "businfoquery.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,16 +25,25 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    QLabel *title;
-    QTextEdit *display;
-
 private slots:
-    void onGetDateClicked();
-    void onGetBusInfoClicked();
-    void onGetTabClicked();
+    void onBusRouteSelected();
+    void onBusStop1Selected();
+    void onBusStop2Selected();
+
+    // void onRadio1Clicked();
+    // void onRadio2Clicked();
 
 private:
     Ui::MainWindow *ui;
-    // BusInfo busInfo;
+
+    QList<QString> busRouteList;
+    QList<QString> busStop1List;
+    QList<QString> busDistanceList;
+    QList<QString> busStop2List;
+
+    QString selectedBusRoute;
+    QString radioState;
+
+    BusInfoQuery busQuery;
 };
 #endif // MAINWINDOW_H

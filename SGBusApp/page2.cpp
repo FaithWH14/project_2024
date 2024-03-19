@@ -111,6 +111,17 @@ void Page2::onRequestBtnClicked() {
     ui->timeLeft3->setText(timeLeft3);
 
     emit testing123(ui->busServiceCombo->currentText(), radioState);
+
+    QList<std::tuple<QString, QString>> busStopList;
+    QString onImageRequestQuery = QString("SELECT busstopcode, busstationname FROM bus_info WHERE busroute = '%1'").arg(currentBus);
+    bus_query.executeQuery(onImageRequestQuery, [&busStopList](QSqlQuery &query){
+        while (query.next()){
+            qDebug() << "imageClicked" << query.value(0).toString() << query.value(1).toString();
+            busStopList.append(std::make_tuple(query.value(0).toString(), query.value(1).toString()));
+        }
+    });
+
+    emit ImageClicked(currentBus, ui->busStopCombo->currentText(), QString::fromStdString(busStopCode), busStopList);
 }
 
 void Page2::convertTime(QString &dateTime, QString &timeDiff){

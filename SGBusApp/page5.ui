@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>600</height>
+    <height>647</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,7 +30,15 @@
 #leftArrow, #rightArrow {
 	background:transparent;
 	border:0px;
-}</string>
+}
+QLabel{
+	color:#2596be;
+}
+#backBtn{
+	border-radius:5px;
+	background-color:#2596be;
+}
+	</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <property name="spacing">
@@ -92,7 +100,14 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_5">
+              <widget class="QLabel" name="bus">
+               <property name="font">
+                <font>
+                 <family>Roboto</family>
+                 <pointsize>18</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
                <property name="text">
                 <string>BUS</string>
                </property>
@@ -101,10 +116,17 @@
             </layout>
            </widget>
           </item>
-          <item>
-           <widget class="QLabel" name="label">
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QLabel" name="busRouteT">
+            <property name="font">
+             <font>
+              <family>Roboto</family>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
             <property name="text">
-             <string>TextLabel</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -140,7 +162,14 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_7">
+              <widget class="QLabel" name="busStop">
+               <property name="font">
+                <font>
+                 <family>Roboto</family>
+                 <pointsize>18</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
                <property name="text">
                 <string>BUS STOP</string>
                </property>
@@ -149,10 +178,17 @@
             </layout>
            </widget>
           </item>
-          <item>
-           <widget class="QLabel" name="label_2">
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QLabel" name="busStopT">
+            <property name="font">
+             <font>
+              <family>Roboto</family>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
             <property name="text">
-             <string>TextLabel</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -188,7 +224,14 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_9">
+              <widget class="QLabel" name="busStopCode">
+               <property name="font">
+                <font>
+                 <family>Roboto</family>
+                 <pointsize>18</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
                <property name="text">
                 <string>BUS STOP CODE</string>
                </property>
@@ -197,10 +240,17 @@
             </layout>
            </widget>
           </item>
-          <item>
-           <widget class="QLabel" name="label_3">
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QLabel" name="busStopCodeT">
+            <property name="font">
+             <font>
+              <family>Roboto</family>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
             <property name="text">
-             <string>TextLabel</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -332,8 +382,14 @@
           <property name="rightMargin">
            <number>0</number>
           </property>
-          <item alignment="Qt::AlignHCenter">
+          <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
            <widget class="QFrame" name="arrowFrame">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -418,6 +474,36 @@
               </widget>
              </item>
             </layout>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignRight">
+           <widget class="QPushButton" name="backBtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>BACK</string>
+            </property>
            </widget>
           </item>
          </layout>

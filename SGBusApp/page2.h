@@ -28,11 +28,12 @@ public:
 
     BusInfoQuery bus_query;
 
-    QString currentBus = "80";
-    QString currentFirstOrSecond = "2";
+    QString currentBus;
+    QString currentFirstOrSecond;
 
 signals:
     void testing123(const QString &busRoute1, const QString &firstOrSecond1);
+    void ImageClicked(QString busRoute1, QString busStationName1, QString busStopCode1, QList<std::tuple<QString, QString>> busStop1);
 
 private slots:
     void onRequestBtnClicked();

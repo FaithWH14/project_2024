@@ -61,5 +61,5 @@ void Page4::handleItemClicked(const QModelIndex &index){
         busStop.append(std::make_tuple(tuple.busStopName, tuple.busStopCode));
     }
     // qDebug() << "handleItemClicked" << indexBusRoute << indexBusStationName << indexBusStopCode;
-    emit onListViewItemClicked(indexBusStationName, indexBusStopCode, busStop);
+    emit onListViewItemClicked(indexBusRoute, indexBusStationName, indexBusStopCode, busStop);
 }
