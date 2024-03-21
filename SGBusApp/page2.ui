@@ -67,9 +67,36 @@ QLabel{
 	color:#2596be;
 }
 #busServiceCombo,#busStopCombo{
-	padding:4px;
+	padding:6px;
 	border-radius:5px;
 	color:#2596be;
+}
+#record,#record1,#record2,#record3{
+	border:0px;
+}
+#noText, #etaText, #timeLeftText, #No1,#eta1,#timeLeft1, #No2,#eta2,#timeLeft2, #No3,#eta3,#timeLeft3{
+	background-color:#4682B4;
+	border-radius:7px;
+	color: #d3eaf2;
+}
+#card1,#card2,#card3{
+	border:1px solid#4682B4;
+	border-radius:7px;
+}
+QComboBox{
+	background-color:#d3eaf2;
+}
+QComboBox::editable{
+	background: white;
+}
+QComboBox::drop-down{
+	border:none;
+}
+QComboBox::down-arrow{
+	image: url(:/blueicons/assets/icons/blue/arrow-down.svg);
+	width:30px;
+	height:30px;
+	margin-right:30px;
 }</string>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -168,8 +195,18 @@ QLabel{
                <property name="font">
                 <font>
                  <family>Roboto</family>
-                 <pointsize>10</pointsize>
+                 <pointsize>12</pointsize>
+                 <italic>false</italic>
                 </font>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>16</width>
+                 <height>16</height>
+                </size>
+               </property>
+               <property name="placeholderText">
+                <string/>
                </property>
               </widget>
              </item>
@@ -248,7 +285,7 @@ QLabel{
                <property name="font">
                 <font>
                  <family>Roboto</family>
-                 <pointsize>10</pointsize>
+                 <pointsize>12</pointsize>
                 </font>
                </property>
               </widget>
@@ -649,7 +686,8 @@ QLabel{
                  <widget class="QLabel" name="label_6">
                   <property name="font">
                    <font>
-                    <pointsize>12</pointsize>
+                    <family>Roboto</family>
+                    <pointsize>18</pointsize>
                     <bold>true</bold>
                    </font>
                   </property>
@@ -663,8 +701,19 @@ QLabel{
              </item>
              <item>
               <widget class="QLabel" name="busInfo">
+               <property name="font">
+                <font>
+                 <family>Roboto</family>
+                 <pointsize>14</pointsize>
+                 <italic>true</italic>
+                 <bold>true</bold>
+                </font>
+               </property>
                <property name="text">
                 <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
                </property>
               </widget>
              </item>
@@ -703,7 +752,8 @@ QLabel{
                  <widget class="QLabel" name="label_7">
                   <property name="font">
                    <font>
-                    <pointsize>12</pointsize>
+                    <family>Roboto</family>
+                    <pointsize>18</pointsize>
                     <bold>true</bold>
                    </font>
                   </property>
@@ -717,8 +767,19 @@ QLabel{
              </item>
              <item>
               <widget class="QLabel" name="busStopInfo">
+               <property name="font">
+                <font>
+                 <family>Roboto</family>
+                 <pointsize>14</pointsize>
+                 <italic>true</italic>
+                 <bold>true</bold>
+                </font>
+               </property>
                <property name="text">
                 <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
                </property>
               </widget>
              </item>
@@ -757,7 +818,8 @@ QLabel{
                  <widget class="QLabel" name="label_9">
                   <property name="font">
                    <font>
-                    <pointsize>12</pointsize>
+                    <family>Roboto</family>
+                    <pointsize>18</pointsize>
                     <bold>true</bold>
                    </font>
                   </property>
@@ -771,8 +833,19 @@ QLabel{
              </item>
              <item>
               <widget class="QLabel" name="firstOrSecond">
+               <property name="font">
+                <font>
+                 <family>Roboto</family>
+                 <pointsize>14</pointsize>
+                 <italic>true</italic>
+                 <bold>true</bold>
+                </font>
+               </property>
                <property name="text">
                 <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
                </property>
               </widget>
              </item>
@@ -809,6 +882,21 @@ QLabel{
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_13">
+                <property name="spacing">
+                 <number>15</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QLabel" name="No2">
                   <property name="maximumSize">
@@ -817,22 +905,55 @@ QLabel{
                     <height>16777215</height>
                    </size>
                   </property>
+                  <property name="font">
+                   <font>
+                    <family>Roboto</family>
+                    <pointsize>14</pointsize>
+                    <italic>true</italic>
+                    <bold>true</bold>
+                   </font>
+                  </property>
                   <property name="text">
                    <string>2</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
                 <item>
                  <widget class="QLabel" name="eta2">
+                  <property name="font">
+                   <font>
+                    <family>Roboto</family>
+                    <pointsize>15</pointsize>
+                    <italic>true</italic>
+                    <bold>true</bold>
+                   </font>
+                  </property>
                   <property name="text">
                    <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
                 <item>
                  <widget class="QLabel" name="timeLeft2">
+                  <property name="font">
+                   <font>
+                    <family>Roboto</family>
+                    <pointsize>15</pointsize>
+                    <italic>true</italic>
+                    <bold>true</bold>
+                   </font>
+                  </property>
                   <property name="text">
                    <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
@@ -848,6 +969,21 @@ QLabel{
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_14">
+                <property name="spacing">
+                 <number>15</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QLabel" name="No3">
                   <property name="maximumSize">
@@ -856,22 +992,55 @@ QLabel{
                     <height>16777215</height>
                    </size>
                   </property>
+                  <property name="font">
+                   <font>
+                    <family>Roboto</family>
+                    <pointsize>14</pointsize>
+                    <italic>true</italic>
+                    <bold>true</bold>
+                   </font>
+                  </property>
                   <property name="text">
                    <string>3</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
                 <item>
                  <widget class="QLabel" name="eta3">
+                  <property name="font">
+                   <font>
+                    <family>Roboto</family>
+                    <pointsize>15</pointsize>
+                    <italic>true</italic>
+                    <bold>true</bold>
+                   </font>
+                  </property>
                   <property name="text">
                    <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
                 <item>
                  <widget class="QLabel" name="timeLeft3">
+                  <property name="font">
+                   <font>
+                    <family>Roboto</family>
+                    <pointsize>15</pointsize>
+                    <italic>true</italic>
+                    <bold>true</bold>
+                   </font>
+                  </property>
                   <property name="text">
                    <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
@@ -887,6 +1056,21 @@ QLabel{
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_12">
+                <property name="spacing">
+                 <number>15</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QLabel" name="No1">
                   <property name="maximumSize">
@@ -895,22 +1079,55 @@ QLabel{
                     <height>16777215</height>
                    </size>
                   </property>
+                  <property name="font">
+                   <font>
+                    <family>Roboto</family>
+                    <pointsize>14</pointsize>
+                    <italic>true</italic>
+                    <bold>true</bold>
+                   </font>
+                  </property>
                   <property name="text">
                    <string>1</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
                 <item>
                  <widget class="QLabel" name="eta1">
+                  <property name="font">
+                   <font>
+                    <family>Roboto</family>
+                    <pointsize>15</pointsize>
+                    <italic>true</italic>
+                    <bold>true</bold>
+                   </font>
+                  </property>
                   <property name="text">
                    <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
                 <item>
                  <widget class="QLabel" name="timeLeft1">
+                  <property name="font">
+                   <font>
+                    <family>Roboto</family>
+                    <pointsize>15</pointsize>
+                    <italic>true</italic>
+                    <bold>true</bold>
+                   </font>
+                  </property>
                   <property name="text">
                    <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
@@ -926,6 +1143,21 @@ QLabel{
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_15">
+                <property name="spacing">
+                 <number>15</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QLabel" name="noText">
                   <property name="maximumSize">
@@ -936,12 +1168,16 @@ QLabel{
                   </property>
                   <property name="font">
                    <font>
-                    <pointsize>10</pointsize>
+                    <family>Roboto</family>
+                    <pointsize>16</pointsize>
                     <bold>true</bold>
                    </font>
                   </property>
                   <property name="text">
                    <string>No</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
@@ -949,12 +1185,16 @@ QLabel{
                  <widget class="QLabel" name="etaText">
                   <property name="font">
                    <font>
-                    <pointsize>10</pointsize>
+                    <family>Roboto</family>
+                    <pointsize>16</pointsize>
                     <bold>true</bold>
                    </font>
                   </property>
                   <property name="text">
                    <string>Estimated Time of Arrival</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
@@ -962,12 +1202,16 @@ QLabel{
                  <widget class="QLabel" name="timeLeftText">
                   <property name="font">
                    <font>
-                    <pointsize>10</pointsize>
+                    <family>Roboto</family>
+                    <pointsize>16</pointsize>
                     <bold>true</bold>
                    </font>
                   </property>
                   <property name="text">
                    <string>Time Left</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>

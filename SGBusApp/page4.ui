@@ -25,7 +25,16 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">listView {
+	border-radius:5px;
+}
+#frame,#frame_2{
+	background-color:#4682B4;
+	border-radius:7px;
+}
+#busLabel,#busTotalLabel,#busValue,#totalBusValue{
+	color: #d3eaf2;
+}</string>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
@@ -43,6 +52,9 @@
        </size>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>15</number>
+       </property>
        <item>
         <widget class="QFrame" name="frame">
          <property name="sizePolicy">
@@ -100,10 +112,15 @@
              <font>
               <family>Roboto</family>
               <pointsize>15</pointsize>
+              <italic>true</italic>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
-             <string>test</string>
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -185,10 +202,15 @@
              <font>
               <family>Roboto</family>
               <pointsize>15</pointsize>
+              <italic>true</italic>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
-             <string>test</string>
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -211,6 +233,13 @@
         <width>400</width>
         <height>0</height>
        </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
      </widget>
     </item>

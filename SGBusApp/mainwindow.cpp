@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
     ui->busRouteCombo->addItems(busRouteList);
+    onBusRouteSelected();
 
     connect(ui->busRouteCombo, &QComboBox::activated, this, &MainWindow::onBusRouteSelected);
     connect(ui->busStop1Combo, &QComboBox::activated, this, &MainWindow::onBusStop1Selected);
